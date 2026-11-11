@@ -1,0 +1,89 @@
+{
+  "customers": 5000,
+  "transactions": 189701,
+  "suspicious_customers": 150,
+  "rules": {
+    "R1_structuring": {
+      "alerts": 66,
+      "true_positives": 30,
+      "precision": 0.455
+    },
+    "R2_pass_through": {
+      "alerts": 88,
+      "true_positives": 29,
+      "precision": 0.33
+    },
+    "R3_fan_in": {
+      "alerts": 25,
+      "true_positives": 25,
+      "precision": 1.0
+    },
+    "R4_fan_out": {
+      "alerts": 140,
+      "true_positives": 20,
+      "precision": 0.143
+    },
+    "R5_high_risk_geo": {
+      "alerts": 25,
+      "true_positives": 25,
+      "precision": 1.0
+    },
+    "R6_dormant_reactivation": {
+      "alerts": 62,
+      "true_positives": 26,
+      "precision": 0.419
+    }
+  },
+  "rules_combined": {
+    "alerted_customers": 381,
+    "true_positives": 144,
+    "precision": 0.378,
+    "recall": 0.96
+  },
+  "recall_by_typology": {
+    "pass_through": 1.0,
+    "dormant_reactivation": 0.76,
+    "fan_out": 1.0,
+    "high_risk_geo": 1.0,
+    "structuring": 1.0,
+    "fan_in": 1.0
+  },
+  "prioritization": {
+    "alerts_to_review_for_95pct_recall": 139,
+    "alerts_to_review_for_100pct_recall": 376,
+    "review_volume_cut_at_95pct_recall": 0.635,
+    "precision_top_decile": 1.0
+  },
+  "structuring_threshold_tuning": [
+    {
+      "min_deposits": 2,
+      "alerts": 142,
+      "structuring_recall": 1.0,
+      "false_positives": 112
+    },
+    {
+      "min_deposits": 3,
+      "alerts": 66,
+      "structuring_recall": 1.0,
+      "false_positives": 36
+    },
+    {
+      "min_deposits": 4,
+      "alerts": 33,
+      "structuring_recall": 1.0,
+      "false_positives": 3
+    },
+    {
+      "min_deposits": 5,
+      "alerts": 21,
+      "structuring_recall": 0.7,
+      "false_positives": 0
+    },
+    {
+      "min_deposits": 6,
+      "alerts": 7,
+      "structuring_recall": 0.233,
+      "false_positives": 0
+    }
+  ]
+}
